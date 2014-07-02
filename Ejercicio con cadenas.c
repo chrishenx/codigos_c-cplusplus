@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <string.h>
 
-#define LONGITUD_CADENA 30  /// 30 bytes -- 240 bits (Por palabra)
+#define LONGITUD_CADENA 30  /// 30 bytes -- 240 bits (Por palabra), "cambiar para cadenas mas largas"
 
 /*
  * Ejercicio con cadenas
@@ -71,7 +71,7 @@ int main() {
         case 'f':
             printf("\n >>>  No hay marcha atras !\n");
             break;
-        default:
+        default:  /// Simplemente se repite el bucle
             break;
         }
 
@@ -134,7 +134,8 @@ void coincidenciasEntreCadenas(char cadena1[], char cadena2[]) {
             if (cadena1[i] == cadena2[j]) {
                 int l, repetido = 0; /// Si "repetido" es 1 entonces cadena1[i] ya esta dentro e las coincidencias
                 for (l = 0; coincidencias[l] != '\0'; l++) {
-                    if (cadena1[i] == coincidencias[l]) {
+                    if (cadena1[i] == coincidencias[l]) {   /// Busqueda de coincidencia en el arreglo "coincidencias"
+                                                            /// para evitar repetidos
                         repetido = 1;
                         break;
                     }
