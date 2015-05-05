@@ -1,3 +1,14 @@
+/**
+  
+  ** Materia educativo **
+
+  Este código muestra una calculadora básica escrita en lenguaje C.
+  
+  @author Christian GOnzalez
+  @date 04/05/2015
+ */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
