@@ -33,13 +33,14 @@
 using namespace std;
 
 int main() {
-  int N = 6;
-  const int NN = N * N;
-  char* matrix = new char[NN];
+  int n;
+  cin >> n;
+  const int N = n;
+  char matrix[N][N];
   // Llenar matriz
   for (int i = 0, k = 65; i < N; i++) {
     for (int j = 0; j < N; j++, k = k < 90 ? k + 1: 65) {
-      cout << (matrix[i * N + j] = k);
+      cout << (matrix[i][j] = k);
     }
     cout << endl;
   }
@@ -47,16 +48,15 @@ int main() {
   // Algoritmo que resuelve el ejercicio
   for (int j = N - 1; j >= 0; j--) {
     for (int i = 0; i < N - j; i++) {
-      cout << matrix[i * N + j + i];
+      cout << matrix[i][j + i];
     }      
     cout << endl;
   }
   for (int i = 1; i < N; i++) {
     for (int j = 0; j < N - i; j++) {
-      cout << matrix[(i + j) * N + j];
+      cout << matrix[i + j][j];
     }
     cout << endl;
   }
-    
-  delete[] matrix;  
+  
 }
